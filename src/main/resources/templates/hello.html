@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My notes</title>
+    <link rel="stylesheet" type="text/css" href="/css/noteStyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <table class="bodyTable">
+        <tr>
+            <td>
+                <h1>My notes</h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form th:action="@{/note/search}" method="POST">
+                    <div class="forLable">
+                        <label for="id">Enter note id:</label>
+                    </div>
+                    <div class="forSearchText">
+                        <input type="text" class="searchId" name="noteId" id="id">
+                    </div>
+                    <div class="forSearchButton">
+                        <button class="buttonSearch" type="submit">Search</button>
+                    </div>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form th:action="@{/note}" method="POST">
+                    <div class="forButtonAdd">
+                        <button class="buttonAdd" type="submit">Add new note</button>
+                    </div>
+                </form>
+            </td>
+        </tr>
+        <tfoot>
+            <td>
+                <div class="signature">Nadiia Fedorovska</div>
+            </td>
+        </tfoot>
+
+    </table>
+</body>
+
+</html>

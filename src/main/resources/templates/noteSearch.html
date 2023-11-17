@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My notes</title>
+    <link rel="stylesheet" type="text/css" href="/css/noteStyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <table class="bodyTable">
+        <tr>
+            <td>
+                <h1>Search note</h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table valign="center" align="center">
+                    <tr>
+                        <th class="colId">Id</th>
+                        <th class="colTitle">Title</th>
+                        <th class="colContent">Content</th>
+                        <th class="colAction">Action</th>
+                    </tr>
+                    <tr>
+                        <td class="tableForList" th:text="${note.id}"></td>
+                        <td class="tableForList" th:text="${note.title}"></td>
+                        <td class="tableForList" th:text="${note.content}"></td>
+                        <td valign="tableForList" align="center">
+                            <div>
+                                <form th:action="@{/note/update}" method="GET">
+                                    <input type="hidden" name="id" th:value="${note.id}" />
+                                    <button class="buttonUpdate" type="submit" name="id" id="update">Update</button>
+                                </form>
+                            </div>
+                            <div>
+                                <form th:action="@{/note/delete}" method="POST">
+                                    <input type="hidden" name="id" th:value="${note.id}" />
+                                    <button class="buttonDelete" type="submit" id="delete">Delete</button>
+                                </form>
+                            </div>
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form class="center" th:action="@{/note/create}" method="GET">
+                    <button class="buttonAdd" type="submit" name="add" id="add">Add new note</button>
+                </form>
+            </td>
+        </tr>
+        <tfoot>
+            <td>
+                <div class="signature">Nadiia Fedorovska</div>
+            </td>
+        </tfoot>
+
+    </table>
+</body>
+
+</html>
